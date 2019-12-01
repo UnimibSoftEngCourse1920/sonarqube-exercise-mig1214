@@ -64,6 +64,7 @@ public class ActiveTestSuite extends TestSuite {
                Logger logger=Logger.getLogger(ActiveTestSuite.class.getName());
                
                logger.log(Level.WARNING,"Interrupted!",e);
+               Thread.currentThread().interrupt();
             }
         }
     }
