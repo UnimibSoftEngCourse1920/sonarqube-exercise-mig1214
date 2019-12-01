@@ -10,7 +10,10 @@ import org.junit.runners.ParentRunner;
 import org.junit.runners.model.InitializationError;
 import org.junit.runners.model.RunnerBuilder;
 import org.junit.runners.model.RunnerScheduler;
+import java.util.logging.Level; 
+import java.util.logging.Logger;
 
+import junit.extensions.ActiveTestSuite; 
 public class ParallelComputer extends Computer {
     private final boolean classes;
 
@@ -43,7 +46,10 @@ public class ParallelComputer extends Computer {
                         fService.shutdown();
                         fService.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
                     } catch (InterruptedException e) {
-                        e.printStackTrace(System.err);
+                        Logger logger=Logger.getLogger(ParallelComputer.class.getName());
+                        
+                        logger.log(Level.WARNING,"Interrupted!",e);
+                        Thread.currentThread().interrupt();
                     }
                 }
             });
