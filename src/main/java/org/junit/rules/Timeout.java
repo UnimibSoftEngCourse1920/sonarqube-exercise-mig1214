@@ -1,5 +1,6 @@
 package org.junit.rules;
 
+import org.junit.AssumptionViolatedExceptionJr;
 import org.junit.internal.runners.statements.FailOnTimeout;
 import org.junit.runner.Description;
 import org.junit.runners.model.Statement;
@@ -229,5 +230,11 @@ public class Timeout implements TestRule {
         public Timeout build() {
             return new Timeout(this);
         }
+    }
+
+    public void skipped(AssumptionViolatedExceptionJr e,
+            Description description) {
+        // TODO Auto-generated method stub
+        
     }
 }
