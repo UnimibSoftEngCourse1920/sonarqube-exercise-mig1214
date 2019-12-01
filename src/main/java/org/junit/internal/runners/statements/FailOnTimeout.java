@@ -159,6 +159,7 @@ public class FailOnTimeout extends Statement {
             }
         } catch (InterruptedException e) {
             return e; // caller will re-throw; no need to call Thread.interrupt()
+                      // aggiunto commento di segnalazione del commit
         } catch (ExecutionException e) {
             // test failed; have caller re-throw the exception thrown by the test
             return e.getCause();
