@@ -1,6 +1,7 @@
 package org.junit.tests.running.classes.parent;
 
 import org.junit.Assert;
+import org.junit.AssumptionViolatedExceptionJr;
 import org.junit.ClassRule;
 import org.junit.Test;
 import org.junit.rules.TestRule;
@@ -37,6 +38,12 @@ public class TestWithClassRule {
                     base.evaluate();
                 }
             };
+        }
+
+        public void skipped(AssumptionViolatedExceptionJr e,
+                Description description) {
+            // TODO Auto-generated method stub
+            
         }
     }
 }

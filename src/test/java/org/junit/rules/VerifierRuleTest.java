@@ -5,8 +5,10 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.experimental.results.PrintableResult.testResult;
 import static org.junit.experimental.results.ResultMatchers.isSuccessful;
 
+import org.junit.AssumptionViolatedExceptionJr;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.runner.Description;
 
 public class VerifierRuleTest {
 
@@ -18,6 +20,12 @@ public class VerifierRuleTest {
             @Override
             protected void verify() {
                 sequence += "verify ";
+            }
+
+            public void skipped(AssumptionViolatedExceptionJr e,
+                    Description description) {
+                // TODO Auto-generated method stub
+                
             }
         };
 

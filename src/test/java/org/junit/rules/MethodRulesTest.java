@@ -11,6 +11,7 @@ import static org.junit.experimental.results.ResultMatchers.failureCountIs;
 import static org.junit.experimental.results.ResultMatchers.hasSingleFailureContaining;
 import static org.junit.experimental.results.ResultMatchers.isSuccessful;
 import org.junit.After;
+import org.junit.AssumptionViolatedExceptionJr;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -286,6 +287,12 @@ public class MethodRulesTest {
                     base.evaluate();
                 }
             };
+        }
+
+        public void skipped(AssumptionViolatedExceptionJr e,
+                Description description) {
+            // TODO Auto-generated method stub
+            
         }
     }
 

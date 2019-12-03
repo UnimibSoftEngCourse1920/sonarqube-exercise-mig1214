@@ -21,6 +21,7 @@ import org.hamcrest.Matcher;
 import org.hamcrest.StringDescription;
 import org.hamcrest.TypeSafeMatcher;
 import org.junit.AfterClass;
+import org.junit.AssumptionViolatedExceptionJr;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
@@ -390,6 +391,12 @@ public class StackTracesTest {
                 Statement base, org.junit.runner.Description description) {
             new FakeClassUnderTest().throwsExceptionWithoutCause();
             return base;
+        }
+
+        public void skipped(AssumptionViolatedExceptionJr e,
+                org.junit.runner.Description description) {
+            // TODO Auto-generated method stub
+            
         }
     }
 

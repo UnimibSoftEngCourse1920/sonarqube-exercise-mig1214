@@ -5,7 +5,9 @@ import static org.junit.Assert.fail;
 import java.io.File;
 import java.io.IOException;
 
+import org.junit.AssumptionViolatedExceptionJr;
 import org.junit.Rule;
+import org.junit.runner.Description;
 
 /**
  * The TemporaryFolder Rule allows creation of files and folders that should
@@ -306,5 +308,11 @@ public class TemporaryFolder extends ExternalResource {
             }
         }
         return file.delete();
+    }
+
+    public void skipped(AssumptionViolatedExceptionJr e,
+            Description description) {
+        // TODO Auto-generated method stub
+        
     }
 }

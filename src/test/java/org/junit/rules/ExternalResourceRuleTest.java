@@ -17,6 +17,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 import org.hamcrest.CoreMatchers;
 import org.hamcrest.Matcher;
+import org.junit.AssumptionViolatedExceptionJr;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.TestCouldNotBeSkippedException;
@@ -44,6 +45,12 @@ public class ExternalResourceRuleTest {
             protected void after() {
                 callSequence += "after ";
             }
+
+            public void skipped(AssumptionViolatedExceptionJr e,
+                    Description description) {
+                // TODO Auto-generated method stub
+                
+            }
         };
 
         @Test
@@ -66,6 +73,12 @@ public class ExternalResourceRuleTest {
             @Override
             protected void after() {
                 throw new RuntimeException("simulating resource tear down failure");
+            }
+
+            public void skipped(AssumptionViolatedExceptionJr e,
+                    Description description) {
+                // TODO Auto-generated method stub
+                
             }
         };
         Statement failingTest = new Fail(new RuntimeException("simulated test failure"));
@@ -90,6 +103,12 @@ public class ExternalResourceRuleTest {
             protected void after() {
                 throw new RuntimeException("simulating resource1 tear down failure");
             }
+
+            public void skipped(AssumptionViolatedExceptionJr e,
+                    Description description) {
+                // TODO Auto-generated method stub
+                
+            }
         };
 
         @Rule
@@ -97,6 +116,12 @@ public class ExternalResourceRuleTest {
             @Override
             protected void after() {
                 throw new RuntimeException("simulating resource2 tear down failure");
+            }
+
+            public void skipped(AssumptionViolatedExceptionJr e,
+                    Description description) {
+                // TODO Auto-generated method stub
+                
             }
         };
 
@@ -131,6 +156,12 @@ public class ExternalResourceRuleTest {
                 RuntimeException runtimeException = new RuntimeException("simulating resource tear down failure");
                 externalResourceException.set(runtimeException);
                 throw runtimeException;
+            }
+
+            public void skipped(AssumptionViolatedExceptionJr e,
+                    Description description) {
+                // TODO Auto-generated method stub
+                
             }
         };
         final AtomicReference<Throwable> assumptionViolatedException = new AtomicReference<Throwable>();

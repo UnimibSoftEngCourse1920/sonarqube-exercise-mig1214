@@ -5,6 +5,7 @@ import static org.junit.Assert.fail;
 import java.util.List;
 
 import org.junit.AfterClass;
+import org.junit.AssumptionViolatedExceptionJr;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
 import org.junit.Ignore;
@@ -122,6 +123,12 @@ public class ClassLevelMethodsWithIgnoredTestsTest {
     public static class BrokenRule implements TestRule {
         public Statement apply(Statement base, Description description) {
             throw new RuntimeException("this rule is broken");
+        }
+
+        public void skipped(AssumptionViolatedExceptionJr e,
+                Description description) {
+            // TODO Auto-generated method stub
+            
         }
     }
 

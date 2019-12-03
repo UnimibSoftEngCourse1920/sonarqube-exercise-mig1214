@@ -13,6 +13,7 @@ import junit.framework.TestCase;
 import junit.framework.TestSuite;
 import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.AssumptionViolatedExceptionJr;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
@@ -473,6 +474,12 @@ public class AnnotationTest extends TestCase {
                 protected void after() {
                     log += "super.rule().after() ";
                 }
+
+                public void skipped(AssumptionViolatedExceptionJr e,
+                        Description description) {
+                    // TODO Auto-generated method stub
+                    
+                }
             };
         }
 
@@ -501,6 +508,12 @@ public class AnnotationTest extends TestCase {
                 @Override
                 protected void after() {
                     log += "sub.rule().after() ";
+                }
+
+                public void skipped(AssumptionViolatedExceptionJr e,
+                        Description description) {
+                    // TODO Auto-generated method stub
+                    
                 }
             };
         }
@@ -559,6 +572,12 @@ public class AnnotationTest extends TestCase {
                 protected void after() {
                     log += "super.rule().after() ";
                 }
+
+                public void skipped(AssumptionViolatedExceptionJr e,
+                        Description description) {
+                    // TODO Auto-generated method stub
+                    
+                }
             };
         }
     }
@@ -576,6 +595,12 @@ public class AnnotationTest extends TestCase {
                 @Override
                 protected void after() {
                     log += "sub.rule().after() ";
+                }
+
+                public void skipped(AssumptionViolatedExceptionJr e,
+                        Description description) {
+                    // TODO Auto-generated method stub
+                    
                 }
             };
         }
@@ -609,6 +634,12 @@ public class AnnotationTest extends TestCase {
             protected void after() {
                 log += "super.rule.after() ";
             }
+
+            public void skipped(AssumptionViolatedExceptionJr e,
+                    Description description) {
+                // TODO Auto-generated method stub
+                
+            }
         };
     }
 
@@ -624,6 +655,12 @@ public class AnnotationTest extends TestCase {
             @Override
             protected void after() {
                 log += "sub.rule.after() ";
+            }
+
+            public void skipped(AssumptionViolatedExceptionJr e,
+                    Description description) {
+                // TODO Auto-generated method stub
+                
             }
         };
 
@@ -656,6 +693,12 @@ public class AnnotationTest extends TestCase {
             protected void after() {
                 log += "super.rule.after() ";
             }
+
+            public void skipped(AssumptionViolatedExceptionJr e,
+                    Description description) {
+                // TODO Auto-generated method stub
+                
+            }
         };
     }
 
@@ -671,6 +714,12 @@ public class AnnotationTest extends TestCase {
             @Override
             protected void after() {
                 log += "sub.rule.after() ";
+            }
+
+            public void skipped(AssumptionViolatedExceptionJr e,
+                    Description description) {
+                // TODO Auto-generated method stub
+                
             }
         };
 

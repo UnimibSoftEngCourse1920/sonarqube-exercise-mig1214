@@ -12,6 +12,7 @@ import static org.junit.experimental.results.ResultMatchers.isSuccessful;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.junit.AssumptionViolatedExceptionJr;
 import org.junit.ClassRule;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -34,6 +35,12 @@ public class ClassRulesTest {
         @Override
         protected void before() throws Throwable {
             count++;
+        }
+
+        public void skipped(AssumptionViolatedExceptionJr e,
+                Description description) {
+            // TODO Auto-generated method stub
+            
         }
     }
 
@@ -83,6 +90,12 @@ public class ClassRulesTest {
                 }
             };
         }
+
+        public void skipped(AssumptionViolatedExceptionJr e,
+                Description description) {
+            // TODO Auto-generated method stub
+            
+        }
     }
 
     public static class ExampleTestWithCustomClassRule {
@@ -126,6 +139,12 @@ public class ClassRulesTest {
                     base.evaluate();
                 }
             };
+        }
+
+        public void skipped(AssumptionViolatedExceptionJr e,
+                Description description) {
+            // TODO Auto-generated method stub
+            
         }
     }
 
@@ -229,6 +248,12 @@ public class ClassRulesTest {
                         base.evaluate();
                     }
                 };
+            }
+
+            public void skipped(AssumptionViolatedExceptionJr e,
+                    Description description) {
+                // TODO Auto-generated method stub
+                
             }
         }
 

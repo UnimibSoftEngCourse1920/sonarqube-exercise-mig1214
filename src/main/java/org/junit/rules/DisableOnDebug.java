@@ -2,6 +2,7 @@ package org.junit.rules;
 
 import java.util.List;
 
+import org.junit.AssumptionViolatedExceptionJr;
 import org.junit.internal.management.ManagementFactory;
 import org.junit.internal.management.RuntimeMXBean;
 import org.junit.runner.Description;
@@ -120,6 +121,12 @@ public class DisableOnDebug implements TestRule {
      */
     public boolean isDebugging() {
         return debugging;
+    }
+
+    public void skipped(AssumptionViolatedExceptionJr e,
+            Description description) {
+        // TODO Auto-generated method stub
+        
     }
 
 }

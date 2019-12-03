@@ -1,5 +1,6 @@
 package org.junit.rules;
 
+import org.junit.AssumptionViolatedExceptionJr;
 import org.junit.runner.Description;
 import org.junit.runners.model.Statement;
 
@@ -14,5 +15,11 @@ class LoggingTestRule implements TestRule {
 
     public Statement apply(Statement base, Description description) {
         return new LoggingStatement(base, log, name);
+    }
+
+    public void skipped(AssumptionViolatedExceptionJr e,
+            Description description) {
+        // TODO Auto-generated method stub
+        
     }
 }

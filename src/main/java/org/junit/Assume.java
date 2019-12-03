@@ -65,7 +65,7 @@ public class Assume {
      * @param message A message to pass to {@link AssumptionViolatedException}.
      */
     public static void assumeTrue(String message, boolean b) {
-        if (!b) throw new AssumptionViolatedException(message);
+        if (!b) throw new AssumptionViolatedExceptionJr(message);
     }
 
     /**
@@ -103,7 +103,7 @@ public class Assume {
      */
     public static <T> void assumeThat(T actual, Matcher<T> matcher) {
         if (!matcher.matches(actual)) {
-            throw new AssumptionViolatedException(actual, matcher);
+            throw new AssumptionViolatedExceptionJr(actual, matcher);
         }
     }
 
@@ -126,7 +126,7 @@ public class Assume {
      */
     public static <T> void assumeThat(String message, T actual, Matcher<T> matcher) {
         if (!matcher.matches(actual)) {
-            throw new AssumptionViolatedException(message, actual, matcher);
+            throw new AssumptionViolatedExceptionJr(message, actual, matcher);
         }
     }
 

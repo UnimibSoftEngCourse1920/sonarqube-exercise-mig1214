@@ -26,31 +26,31 @@ public class AssumptionViolatedExceptionTest {
     @Theory
     public void toStringReportsMatcher(Integer actual, Matcher<Integer> matcher) {
         assumeThat(matcher, notNullValue());
-        assertThat(new AssumptionViolatedException(actual, matcher).toString(),
+        assertThat(new AssumptionViolatedExceptionJr(actual, matcher).toString(),
                 containsString(matcher.toString()));
     }
 
     @Theory
     public void toStringReportsValue(Integer actual, Matcher<Integer> matcher) {
-        assertThat(new AssumptionViolatedException(actual, matcher).toString(),
+        assertThat(new AssumptionViolatedExceptionJr(actual, matcher).toString(),
                 containsString(String.valueOf(actual)));
     }
 
     @Test
     public void assumptionViolatedExceptionWithMatcherDescribesItself() {
-        AssumptionViolatedException e = new AssumptionViolatedException(3, is(2));
+        AssumptionViolatedExceptionJr e = new AssumptionViolatedExceptionJr(3, is(2));
         assertThat(StringDescription.asString(e), is("got: <3>, expected: is <2>"));
     }
 
     @Test
     public void simpleAssumptionViolatedExceptionDescribesItself() {
-        AssumptionViolatedException e = new AssumptionViolatedException("not enough money");
+        AssumptionViolatedExceptionJr e = new AssumptionViolatedExceptionJr("not enough money");
         assertThat(StringDescription.asString(e), is("not enough money"));
     }
 
     @Test
     public void canInitCauseWithInstanceCreatedWithString() {
-      AssumptionViolatedException e = new AssumptionViolatedException("invalid number");
+      AssumptionViolatedExceptionJr e = new AssumptionViolatedExceptionJr("invalid number");
       Throwable cause = new RuntimeException("cause");
       e.initCause(cause);
       assertThat(e.getCause(), is(cause));
@@ -89,7 +89,7 @@ public class AssumptionViolatedExceptionTest {
     @Test
     public void canSetCauseWithInstanceCreatedWithExplicitThrowableConstructor() {
       Throwable cause = new Exception();
-      AssumptionViolatedException e = new AssumptionViolatedException("invalid number", cause);
+      AssumptionViolatedExceptionJr e = new AssumptionViolatedExceptionJr("invalid number", cause);
       assertThat(e.getCause(), is(cause));
     }
 }

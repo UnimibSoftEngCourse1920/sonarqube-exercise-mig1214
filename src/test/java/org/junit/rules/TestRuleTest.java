@@ -15,6 +15,7 @@ import java.util.List;
 
 import org.junit.After;
 import org.junit.Assume;
+import org.junit.AssumptionViolatedExceptionJr;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -39,6 +40,12 @@ public class TestRuleTest {
                         base.evaluate();
                     }
                 };
+            }
+
+            public void skipped(AssumptionViolatedExceptionJr e,
+                    Description description) {
+                // TODO Auto-generated method stub
+                
             }
         };
 
@@ -67,6 +74,12 @@ public class TestRuleTest {
         public Statement apply(Statement base, Description description) {
             applications++;
             return base;
+        }
+
+        public void skipped(AssumptionViolatedExceptionJr e,
+                Description description) {
+            // TODO Auto-generated method stub
+            
         }
     }
 
@@ -109,6 +122,12 @@ public class TestRuleTest {
                         base.evaluate();
                     }
                 };
+            }
+
+            public void skipped(AssumptionViolatedExceptionJr e,
+                    Description description) {
+                // TODO Auto-generated method stub
+                
             }
         }
 
@@ -230,6 +249,12 @@ public class TestRuleTest {
                 }
             };
         }
+
+        public void skipped(AssumptionViolatedExceptionJr e,
+                Description description) {
+            // TODO Auto-generated method stub
+            
+        }
     }
 
     public static class UsesCustomMethodRule {
@@ -257,6 +282,12 @@ public class TestRuleTest {
                         base.evaluate();
                     }
                 };
+            }
+
+            public void skipped(AssumptionViolatedExceptionJr e,
+                    Description description) {
+                // TODO Auto-generated method stub
+                
             }
         };
 
@@ -290,6 +321,12 @@ public class TestRuleTest {
         public Statement apply(Statement base, Description description) {
             applications++;
             return base;
+        }
+
+        public void skipped(AssumptionViolatedExceptionJr e,
+                Description description) {
+            // TODO Auto-generated method stub
+            
         }
     }
 
@@ -334,6 +371,12 @@ public class TestRuleTest {
                         base.evaluate();
                     }
                 };
+            }
+
+            public void skipped(AssumptionViolatedExceptionJr e,
+                    Description description) {
+                // TODO Auto-generated method stub
+                
             }
         }
 
@@ -490,6 +533,12 @@ public class TestRuleTest {
                 }
             };
         }
+
+        public void skipped(AssumptionViolatedExceptionJr e,
+                Description description) {
+            // TODO Auto-generated method stub
+            
+        }
     }
 
     public static class UsesFieldAndMethodRule {
@@ -525,6 +574,12 @@ public class TestRuleTest {
                         base.evaluate();
                     }
                 };
+            }
+
+            public void skipped(AssumptionViolatedExceptionJr e,
+                    Description description) {
+                // TODO Auto-generated method stub
+                
             }
         }
 

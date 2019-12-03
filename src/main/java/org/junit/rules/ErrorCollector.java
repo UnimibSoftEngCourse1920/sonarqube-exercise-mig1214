@@ -7,8 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
 
+import org.junit.AssumptionViolatedExceptionJr;
 import org.junit.function.ThrowingRunnable;
 import org.junit.internal.AssumptionViolatedException;
+import org.junit.runner.Description;
 import org.hamcrest.Matcher;
 import org.junit.runners.model.MultipleFailureException;
 
@@ -115,6 +117,12 @@ public class ErrorCollector extends Verifier {
         } catch (AssertionError e) {
             addError(e);
         }
+    }
+
+    public void skipped(AssumptionViolatedExceptionJr e,
+            Description description) {
+        // TODO Auto-generated method stub
+        
     }
 
 }

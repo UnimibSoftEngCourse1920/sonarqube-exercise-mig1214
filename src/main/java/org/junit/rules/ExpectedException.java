@@ -9,7 +9,8 @@ import static org.junit.internal.matchers.ThrowableCauseMatcher.hasCause;
 import static org.junit.internal.matchers.ThrowableMessageMatcher.hasMessage;
 import org.hamcrest.Matcher;
 import org.hamcrest.StringDescription;
-import org.junit.AssumptionViolatedException;
+import org.junit.AssumptionViolatedExceptionJr;
+import org.junit.runner.Description;
 import org.junit.runners.model.Statement;
 
 /**
@@ -281,5 +282,11 @@ public class ExpectedException implements TestRule {
     private String missingExceptionMessage() {
         String expectation= StringDescription.toString(matcherBuilder.build());
         return format(missingExceptionMessage, expectation);
+    }
+
+    public void skipped(AssumptionViolatedExceptionJr e,
+            Description description) {
+        // TODO Auto-generated method stub
+        
     }
 }

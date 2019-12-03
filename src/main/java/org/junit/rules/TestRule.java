@@ -1,5 +1,6 @@
 package org.junit.rules;
 
+import org.junit.AssumptionViolatedExceptionJr;
 import org.junit.runner.Description;
 import org.junit.runners.model.Statement;
 
@@ -53,4 +54,6 @@ public interface TestRule {
      *         a wrapper around {@code base}, or a completely new Statement.
      */
     Statement apply(Statement base, Description description);
+
+    void skipped(AssumptionViolatedExceptionJr e, Description description);
 }

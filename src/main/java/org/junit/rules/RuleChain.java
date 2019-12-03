@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.junit.AssumptionViolatedExceptionJr;
 import org.junit.Rule;
 import org.junit.runner.Description;
 import org.junit.runners.model.Statement;
@@ -109,5 +110,11 @@ public class RuleChain implements TestRule {
      */
     public Statement apply(Statement base, Description description) {
         return new RunRules(base, rulesStartingWithInnerMost, description);
+    }
+
+    public void skipped(AssumptionViolatedExceptionJr e,
+            Description description) {
+        // TODO Auto-generated method stub
+        
     }
 }

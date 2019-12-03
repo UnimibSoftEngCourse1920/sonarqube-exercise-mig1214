@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 
+import org.junit.AssumptionViolatedExceptionJr;
 import org.junit.Test;
 import org.junit.rules.MethodRule;
 import org.junit.rules.TestRule;
@@ -56,6 +57,12 @@ public class RuleContainerTest {
 
         public Statement apply(Statement base, Description description) {
             return base;
+        }
+
+        public void skipped(AssumptionViolatedExceptionJr e,
+                Description description) {
+            // TODO Auto-generated method stub
+            
         }
     }
 

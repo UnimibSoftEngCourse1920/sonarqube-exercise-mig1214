@@ -9,6 +9,7 @@ import static org.junit.experimental.results.ResultMatchers.isSuccessful;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.junit.AssumptionViolatedExceptionJr;
 import org.junit.Test;
 import org.junit.runner.Description;
 import org.junit.runner.RunWith;
@@ -74,6 +75,12 @@ public class BlockJUnit4ClassRunnerOverrideTest {
             methodRules.add(new TestRule() {
                 public Statement apply(Statement base, Description description) {
                     return new FlipBitRule().apply(base, null, test);
+                }
+
+                public void skipped(AssumptionViolatedExceptionJr e,
+                        Description description) {
+                    // TODO Auto-generated method stub
+                    
                 }
             });
             return methodRules;

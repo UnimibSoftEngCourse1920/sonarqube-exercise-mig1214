@@ -8,6 +8,7 @@ import java.util.Collections;
 import java.util.List;
 
 import org.junit.Assert;
+import org.junit.AssumptionViolatedExceptionJr;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.Description;
@@ -44,6 +45,12 @@ public class DisableOnDebugTest {
                     throw new AssertionError();
                 }
             };
+        }
+
+        public void skipped(AssumptionViolatedExceptionJr e,
+                Description description) {
+            // TODO Auto-generated method stub
+            
         }
 
     }
